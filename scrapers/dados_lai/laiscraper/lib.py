@@ -56,10 +56,12 @@ def busca_lai_por_anos(anos, tipo_dados='acesso', localizacao='./', formato_arqu
             response = requests.get(url, stream=True)
             with open(os.path.join(localizacao, nome_arquivo), 'wb') as out_file:
                 shutil.copyfileobj(response.raw, out_file)
-        except:
+
+            print(f"Arquivo {nome_arquivo} baixado de {url}")
+        except Exception as e:
+            print(e)
             print(f"Error baixando arquivo {nome_arquivo} da url {url}")
 
-        print(f"Arquivo {nome_arquivo} baixado de {url}")
         time.sleep(2)
 
 if __name__ == '__main__':
