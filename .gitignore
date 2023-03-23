@@ -134,3 +134,5 @@ data/*
 *.zip
 *.csv
 *.pkl
+*.npy
+*.xlsx
